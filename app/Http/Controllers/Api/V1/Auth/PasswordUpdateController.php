@@ -17,7 +17,7 @@ class PasswordUpdateController extends Controller
             'password' => ['required', 'confirmed', Password::defaults()]
         ]);
 
-        auth()->user()->update([
+        $request->user()->update([
             'password' => Hash::make($request->input('password'))
         ]);
 
